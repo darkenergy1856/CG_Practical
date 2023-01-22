@@ -3,24 +3,19 @@
 
 using namespace std;
 
+int xCentre;
+int yCentre;
+
 void drawPoint(int x, int y)
 {
-    putpixel(x, y, WHITE);
-    cout << x << "," << y << "\n";
-    putpixel(y, x, WHITE);
-    cout << y << "," << x << "\n";
-    putpixel(-x, y, WHITE);
-    cout << -x << "," << y << "\n";
-    putpixel(y, -x, WHITE);
-    cout << y << "," << -x << "\n";
-    putpixel(x, -y, WHITE);
-    cout << x << "," << -y << "\n";
-    putpixel(-y, x, WHITE);
-    cout << -y << "," << x << "\n";
-    putpixel(-x, -y, WHITE);
-    cout << -x << "," << -y << "\n";
-    putpixel(-y, -x, WHITE);
-    cout << -y << "," << -x << "\n";
+    putpixel(x + xCentre, y + yCentre, WHITE);
+    putpixel(y + yCentre, x + xCentre, WHITE);
+    putpixel(-x + xCentre, y + yCentre, WHITE);
+    putpixel(y + yCentre, -x + xCentre, WHITE);
+    putpixel(x + xCentre, -y + yCentre, WHITE);
+    putpixel(-y + yCentre, x + xCentre, WHITE);
+    putpixel(-x + xCentre, -y + yCentre, WHITE);
+    putpixel(-y + yCentre, -x + xCentre, WHITE);
 }
 
 int main()
@@ -30,6 +25,10 @@ int main()
 
     cout << "Enter Radius of the Circle : ";
     cin >> radius;
+    cout << "Enter X Co-ordinate : ";
+    cin >> xCentre;
+    cout << "Enter Y Co-ordinate : ";
+    cin >> yCentre;
 
     float d = float(5 / 4) - radius;
     int x = 0;
